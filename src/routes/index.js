@@ -3,8 +3,9 @@ import {Route, BrowserRouter, Switch} from "react-router-dom";
 import routes from "./routes.js";
 import Sidebar from "../components/layout/index.js";
 import Login from "../views/Login.js"
+import Register from '../views/Register.js'
+
 import {PrivateRoute} from '../components/routes/index.js';
-//import Profile from "../views/Profile.js"
 class AppRoutes extends Component {
 
     render() {
@@ -17,6 +18,7 @@ class AppRoutes extends Component {
             <BrowserRouter>
                 <Switch>
                     <Route path="/login" component={Login}/>
+                    <Route path="/register" component={Register}/>
                     <Sidebar routes={routes}>
                         <div>
                             <div className="content">

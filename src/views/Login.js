@@ -1,33 +1,39 @@
 import React, {Component} from 'react';
-import {Input, Button} from '@material-ui/core';
-
+import {Input, Button, Card} from '@material-ui/core';
+import {Link} from 'react-router-dom';
 // import { Container } from './styles';
 
 export default class Login extends Component {
-    constructor(props){
-        super(props); 
+    constructor(props) {
+        super(props);
         this.state = {
-            username: '', 
+            username: '',
             password: ''
         }
-        this.handleChange = this.handleChange.bind(this)
+        this.handleChange = this
+            .handleChange
+            .bind(this)
     }
 
-    handleChange(e){
-        this.setState({[e.target.name]: e.target.value })
+    handleChange(e) {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
     }
-    handleSubmit() {
-
-    }
+    handleSubmit() {}
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit()}>
-                    <Input name="username" onChange={this.handleChange} placeholder="Username"/>
-                    <Input name="password" onChange={this.handleChange} placeholder="Senha"/>
-                    <Button type="submit">Submit</Button>
-                </form>
-
+                <Card>
+                    <form onSubmit={this.handleSubmit()}>
+                        <Input name="username" onChange={this.handleChange} placeholder="Username"/>
+                        <Input name="password" onChange={this.handleChange} placeholder="Senha"/>
+                        <Button type="submit">Submit</Button>
+                    </form>
+                    <Link to="/register">
+                        Registrar
+                    </Link>
+                </Card>
             </div>
         )
     }

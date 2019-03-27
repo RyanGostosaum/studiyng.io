@@ -3,9 +3,7 @@ import * as actions from "../actions/types";
 const initialState = {
     items: [],
     loading: false,
-    error: null,
-    current: [],
-    poke: []
+    error: null
 };
 
 export default function rootReducer(state = initialState, action) {
@@ -21,13 +19,6 @@ export default function rootReducer(state = initialState, action) {
                 ...state,
                 loading: false,
                 error: action.payload
-            };
-        case actions.FETCH_POKE_SUCCESS:
-            return {
-                ...state,
-                loading: false,
-                error: null,
-                poke: action.payload.POKE.results
             };
         default:
             // ALWAYS
