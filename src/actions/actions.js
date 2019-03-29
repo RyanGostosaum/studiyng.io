@@ -2,6 +2,7 @@ import Axios from "axios";
 import * as actions from "./types.js"
 
 import AuthService from "../utils/AuthService.js";
+import * as config from "../config/index.js";
 
 const Auth = new AuthService()
 
@@ -17,6 +18,9 @@ export function login(username, password) {
 export function register(data) {
     return dispatch => {
         dispatch(reqInit());
+        return Axios.post(config.DOMAIN + '', data)
+        .then()
+        .catch()
     }
 }
 

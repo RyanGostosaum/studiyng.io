@@ -1,28 +1,18 @@
 import React, {Component} from 'react';
+import RegisterForm from "../components/forms/register.js";
 
-// import { Container } from './styles';
-
-export default class Register extends Component {
-    constructor(props){
-        super(props); 
-        this.state = {
-            username: '', 
-            password: ''
-        }
-        this.handleChange = this.handleChange.bind(this)
-    }
-
-    handleChange(e){
-        this.setState({[e.target.name]: e.target.value })
-    }
-    handleSubmit() {
-
-    }
+class Register extends Component {
+    submit = values => {
+        // print the form values to the console
+        console.log(values); 
+      }
     render() {
         return (
             <div>
-                <h2>Hei, se registre</h2>
+                <RegisterForm onSubmit={this.submit}/>
             </div>
         )
     }
 }
+
+ export default Register
