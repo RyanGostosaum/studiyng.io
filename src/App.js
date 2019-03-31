@@ -1,6 +1,7 @@
+//@flow
+
 import React, {Component} from 'react';
 import AppRoutes from './routes';
-
 import {Provider} from 'react-redux'
 import rootReducer from './reducers/index';
 import logger from 'redux-logger';
