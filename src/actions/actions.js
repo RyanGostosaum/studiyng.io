@@ -18,11 +18,15 @@ export function login(username, password) {
 export function register(data) {
     return dispatch => {
         dispatch(reqInit());
-        return Axios.post(config.DOMAIN + '', data)
-        .then()
-        .catch()
+        return Axios.post(config.DOMAIN + '/register', data)
+        .then(res => {
+            console.log(res.data);
+            dispatch(registerUserSuccess(res.data))
+        })
+        .catch(e => dispatch(registerUserFail(e)))
     }
 }
+
 
 // export function fetchSpecificUser(user) {
 //     return dispatch => {
@@ -68,5 +72,5 @@ export const reqFail = error => ({
     }
 });
 
-// export const fetchPokeSucess = POKE => ({type: FETCH_POKE_SUCCESS, payload: {
-//         POKE     }})
+export const registerUserSuccess = RES => ({type: actions.CREATE_USER_SUCCESS, payload: { RES }})
+export const registerUserFail = E => ({type: actions.CREATE_USER_FAIL, payload: { E }})

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Input, Button, Card} from '@material-ui/core';
 import {Link} from 'react-router-dom';
 // import { Container } from './styles';
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 
 export default class Login extends Component {
     constructor(props) {
@@ -34,6 +35,13 @@ export default class Login extends Component {
                         Registrar
                     </Link>
                 </Card>
+                <FacebookLogin
+                            appId="815853045468706"
+                            fields="name,email,picture"
+                            callback={(res) => console.log(res)}
+                            render={renderProps => (
+                                <Button onClick={renderProps.onClick}>Facebook</Button>
+                              )}/>
             </div>
         )
     }

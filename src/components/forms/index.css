@@ -1,0 +1,14 @@
+
+.registration-form {
+    padding: 50px;
+}
+
+.registration-form button{
+    margin-left: 50px;
+}
+
+@media screen and (max-width: 500px){
+    .registration-form {
+        padding: 35px;
+    }
+}

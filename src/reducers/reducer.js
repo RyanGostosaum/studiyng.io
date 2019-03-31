@@ -3,7 +3,8 @@ import * as actions from "../actions/types";
 const initialState = {
     items: [],
     loading: false,
-    error: null
+    error: null, 
+    ready: true
 };
 
 export default function rootReducer(state = initialState, action) {
@@ -20,6 +21,11 @@ export default function rootReducer(state = initialState, action) {
                 loading: false,
                 error: action.payload
             };
+        case actions.CREATE_USER_SUCCESS: 
+            return {
+                ...state, 
+                ready: true
+            }
         default:
             // ALWAYS
             return state;
