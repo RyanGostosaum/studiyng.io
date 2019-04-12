@@ -2,7 +2,7 @@ import Axios from "axios";
 import * as actions from "./types.js"
 
 import AuthService from "../utils/AuthService.js";
-import * as config from "../config/index.js";
+import config from "../config/index.js";
 
 const Auth = new AuthService()
 

@@ -1,6 +1,7 @@
 import axios from "axios";
 import decode from "jwt-decode";
-import path from 'path'
+
+
 export default class AuthService {
     constructor() {
         this.login = this.login.bind(this);
@@ -56,10 +57,5 @@ export default class AuthService {
 
     logout() {
         localStorage.removeItem("id_token");
-    }
-
-    getProfile() {
-        // Getting info From token
-        return decode(this.getToken());
     }
 }
